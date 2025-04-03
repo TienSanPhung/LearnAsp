@@ -1,0 +1,16 @@
+<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1743594478877" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.ControllerAction/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+  <binary>
+    <option name="AFTER_PATH" value="ControllerAction/obj/Debug/net8.0/ControllerAction.AssemblyInfoInputs.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ControllerAction/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/ControllerAction.AssemblyInfoInputs.cache" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="ControllerAction/obj/Debug/net8.0/ControllerAction.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ControllerAction/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/ControllerAction.assets.cache" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="ControllerAction/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ControllerAction/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/project.nuget.cache" />
+  </binary>
+</changelist>
