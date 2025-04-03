@@ -1,3 +1,5 @@
+using CoAcAtRo.Services;
+
 namespace CoAcAtRo;
 
 public class Program
@@ -8,6 +10,7 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddSingleton<IUser>(services => new User());
 
         var app = builder.Build();
 
@@ -25,6 +28,12 @@ public class Program
         app.UseAuthorization();
 
         app.MapStaticAssets();
+        app.MapControllerRoute(
+            name:"products-index",
+            pattern:"p/{id?}",
+            defaults: new { controller = "Product", action = "Index" }
+        );
+        
         app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
