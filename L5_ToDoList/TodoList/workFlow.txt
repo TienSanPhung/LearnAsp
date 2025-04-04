@@ -1,0 +1,21 @@
+- một chiếc app to do list gồm có những gì?
+    - một danh sách cách công việc: 
+        - có các thao tác cho người dùng như:hiển thị danh sách, thêm một công việc, 
+        cập nhật trạng thái, xóa một công việc.
+        - màn hình hiển thị danh sách phải gồm có: trạng thái của công việc, chi tiết của công việc, 
+        thời gian cần hoàn thành.
+    phân tích các model
+    - ứng dụng khi lấy danh sách các item và hiển thị lên màn hình, các item cần có mô tả và trạng thái
+    => cần có 1 model item có các thành phần => {string:description,(bool,int):status} => phương thức xây dựng: GET
+    - thêm một item, cần hiển thị lên một màn hình mới cho phép điền các thông tin của item
+    => cần model cần có các thành phần: {description:string, status:unfinished, deadline:time} 
+    => khi bấm Oke=> method: POST
+    - cập nhật trạng thái -> xây dựng một hành động(method) sửa status -> method: PUT 
+    {khi sửa trạng thái, có thể user sẽ muốn sửa cả thời gian deadline -> có thể tích hợp thêm}
+    - xóa một sông việc -> delete một item cần có thông báo xác nhận rồi kiểm tra xong rồi mới cho xóa 
+    -> method: DELETE
+=> entity: 1 class -> ToDoItem => properties: id:int, description: string, status:bool
+=> Usecases: 1 IRepository -> IToDoItemRepository , 1 Manager -> ToDoListManager =>method: GetById, Add, Update, Delete
+=> infracstructure: 1 Repository -> inMemoryTodoItemRepository
+=> 1 Webapp
+    
