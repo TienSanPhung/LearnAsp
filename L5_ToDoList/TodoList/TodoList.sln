@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infracstructure", "Infracst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList", "ToDoList\ToDoList.csproj", "{76CF79C7-F844-43F4-98B5-43DC4C4AF36C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{CA424455-1002-4183-9282-27208A6164DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{76CF79C7-F844-43F4-98B5-43DC4C4AF36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76CF79C7-F844-43F4-98B5-43DC4C4AF36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76CF79C7-F844-43F4-98B5-43DC4C4AF36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA424455-1002-4183-9282-27208A6164DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA424455-1002-4183-9282-27208A6164DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA424455-1002-4183-9282-27208A6164DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA424455-1002-4183-9282-27208A6164DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

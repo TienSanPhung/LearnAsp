@@ -18,4 +18,55 @@
 => Usecases: 1 IRepository -> IToDoItemRepository , 1 Manager -> ToDoListManager =>method: GetById, Add, Update, Delete
 => infracstructure: 1 Repository -> inMemoryTodoItemRepository
 => 1 Webapp
-    
+kiến thức về clean architecture
+- là một mô hình kiến trúc phần mềm có khả năng cung cấp sự linh hoạt, mở rộng và bảo trì
+nguyên tắc này ưu tiên việc tách biệt các mối quan tâm và tính độc lập của các khuân khổ và công cụ
+cho phép nhà phát triển tập trung vào logic miền và logic kinh doanh.
+-> mỗi thành phần của hệ thống chịu trách nhiệm cho một nhiệm vụ hoặc chức năng cụ thể
+-> thay đổi triển khai một thành phần sẽ không bị ảnh hưởng đến phần còn lại của hệ thống
+- mục đính chính là chia nhỏ phần mềm thành các lớp dễ bảo trì hơn
+
+Về bản chất, Clean Architecture dựa trên ý tưởng rằng các hệ thống phần mềm nên được xây dựng 
+xung quanh một tập hợp các quy tắc hoặc thực thể kinh doanh cốt lõi. Các thực thể này đại diện cho các khái niệm và 
+mối quan hệ cơ bản hỗ trợ ứng dụng và bao gồm các quy tắc kinh doanh của doanh nghiệp.Các thực thể đóng gói các quy tắc 
+kinh doanh cốt lõi và chúng không bị ảnh hưởng bởi giao diện người dùng hoặc bất kỳ yếu tố bên ngoài nào khác. 
+Các thực thể tạo thành xương sống của ứng dụng và là phần ổn định nhất của kiến trúc 
+=> các lớp thực thể(entity) là cốt lõi, đóng gói các quy tắc, tính chất cốt lõi của hệ thống
+
+các trường hợp sử dụng(UseCases) là các lớp tiếp theo đại diện cho các quy tắc kinh doanh của ứng dụng, 
+cụ thể cho ứng dụng chứ không phải cho doanh nghiệp. Các trường hợp sử dụng sử dụng các thực thể để triển 
+khai các quy tắc kinh doanh cụ thể và đại diện cho nhiều cách khác nhau mà hệ thống có thể được sử dụng. 
+Mỗi trường hợp sử dụng đại diện cho một hành động duy nhất mà người dùng có thể thực hiện và chúng hoạt động trên 
+các thực thể để tạo ra kết quả mong muốn.
+=> các ca hoạt động(UseCases) là quy tắc, hành vi, các cách khác nhau mà hệ thống có thể sử dụng
+-> hoạt động và tương tác trên các thực thể
+
+bộ điều hợp(interface adapter) là các giao diện chịu trách nhiệm chuyển đổi dữ liệu giữa các tác nhân bên ngoài(db,...)
+và các ca sử dụng(UseCases) Lớp này là nơi chứa các bộ điều khiển, cổng, trình bày và các thành phần liên quan 
+đến giao diện khác. Bộ điều khiển xử lý dữ liệu đầu vào của người dùng, trong khi cổng chịu trách nhiệm truy cập 
+các nguồn dữ liệu bên ngoài, chẳng hạn như cơ sở dữ liệu hoặc dịch vụ web. Trình bày chịu trách nhiệm hiển thị dữ liệu 
+trong giao diện người dùng.
+=> interface adapte là các interface chuyển đổi cung cấp dữ liệu cho UseCases
+
+Cuối cùng, lớp giao diện bên ngoài biểu diễn các giao diện mà hệ thống có với thế giới bên ngoài. 
+Các giao diện này có thể bao gồm cơ sở dữ liệu, giao diện người dùng, API web và các hệ thống bên ngoài khác.
+Lớp giao diện bên ngoài chịu trách nhiệm biên dịch dữ liệu giữa ứng dụng và các hệ thống bên ngoài.
+
+QUY TẮC CHÍNH CỦA CLEAN ARCHITECTURE 
+- Quy tắc phụ thuộc: Quy tắc này nêu rằng các phụ thuộc mã nguồn chỉ có thể hướng vào bên trong, 
+hướng tới các chính sách cấp cao hơn và logic miền. -> UI -> interface adapte -> UseCases -> Entity 
+- Sử dụng giao diện: tạo ra ranh giới rõ ràng giữa các thành phần khác nhau của hệ thống, đảm bảo rằng các thành phần 
+khác nhau của hệ thống có thể được thay thế hoặc sửa đổi mà không ảnh hưởng đến phần còn lại của hệ thống.
+- Phân tách mối quan tâm: logic miền và các quy tắc kinh doanh phải được tách biệt khỏi các chi tiết kỹ thuật và 
+mối quan tâm về cơ sở hạ tầng của hệ thống. Bằng cách tách biệt các mối quan tâm, các nhà phát triển có thể tập trung 
+vào logic miền và các yêu cầu kinh doanh của hệ thống, mà không bị sa lầy vào các chi tiết kỹ thuật 
+hoặc chi tiết triển khai.
+- Mô hình miền: để đảm bảo rằng logic kinh doanh được tách biệt khỏi các chi tiết kỹ thuật và 
+chi tiết triển khai của hệ thống
+- Kiểm tra: viết các bài kiểm tra tự động cho hệ thống, các nhà phát triển có thể đảm bảo rằng hệ thống đang hoạt 
+động như mong đợi và các thay đổi đối với hệ thống không gây ra lỗi hoặc hồi quy. Các bài kiểm tra tự động cũng cung 
+cấp một cách để đảm bảo rằng hệ thống có thể bảo trì và thích ứng với các thay đổi theo thời gian
+
+===> Điều quan trọng là phải sử dụng giao diện hoặc giao thức để biểu diễn các khái niệm trừu tượng và đảm bảo rằng
+ các phụ thuộc luôn hướng tới các khái niệm trừu tượng ổn định và tránh xa các triển khai cụ thể dễ thay đổi.
+

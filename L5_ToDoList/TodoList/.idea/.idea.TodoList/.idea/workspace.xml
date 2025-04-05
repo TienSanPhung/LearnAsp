@@ -9,31 +9,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a637a8-34ca-406c-b769-a53c17a68f61" name="Changes" comment="" />
+    <list default="true" id="95a637a8-34ca-406c-b769-a53c17a68f61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ToDoList/Models/Item.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ToDoList/Models/TodolistViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ToDoList/Views/Home/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infracstructure/InMemoryToDoItemsRepositoy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infracstructure/InMemoryToDoItemsRepositoy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/Views/Home/Privacy.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workFlow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workFlow.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "TienSanPhung"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TienSanPhung&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TienSanPhung/LearnAsp.git",
-    "accountId": "a8b68f96-49bb-4ab6-b43f-0e4ca16dd920"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TienSanPhung/LearnAsp.git&quot;,
+    &quot;accountId&quot;: &quot;a8b68f96-49bb-4ab6-b43f-0e4ca16dd920&quot;
   }
-}]]></component>
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2vGyvP849wGvtk3G23CVxHFF6GF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,17 +57,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.ToDoList: https.executor": "Run",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.ToDoList: IIS Express">
+  <component name="RunManager" selected=".NET Launch Settings Profile.ToDoList: https">
     <configuration name="ToDoList: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ToDoList/ToDoList.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -107,8 +126,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743785937242</updated>
-      <workItem from="1743785941576" duration="3414000" />
+      <workItem from="1743785941576" duration="3824000" />
+      <workItem from="1743820151053" duration="5842000" />
+      <workItem from="1743834089117" duration="9775000" />
     </task>
+    <task id="LOCAL-00001" summary="- add: Entity, UseCases, Infracstructure and mainProject&#10;- viết các hành vi cập nhật trạng thái cho ToDoItem&#10;- sử dụng Repository pattern">
+      <option name="closed" value="true" />
+      <created>1743789468627</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743789468627</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,5 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="- add: Entity, UseCases, Infracstructure and mainProject&#10;- viết các hành vi cập nhật trạng thái cho ToDoItem&#10;- sử dụng Repository pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add: Entity, UseCases, Infracstructure and mainProject&#10;- viết các hành vi cập nhật trạng thái cho ToDoItem&#10;- sử dụng Repository pattern" />
   </component>
 </project>

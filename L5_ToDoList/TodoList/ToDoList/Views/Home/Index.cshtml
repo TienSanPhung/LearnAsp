@@ -1,8 +1,68 @@
-﻿@{
+﻿@model ToDoList.Models.TodolistViewModel;
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Danh sách các Item</h1>
+
+    <!-- Danh sách Item -->
+    <ul class="list-group">
+        @foreach (var item in @Model.Item)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fw-bold">@item.Id</span>
+                    <span class="fw-bold">@item.Description</span>
+                    <span class="badge @((item.Status ? "bg-success" : "bg-warning"))">
+                        @(item.Status ? "Hoàn thành" : "Chưa xong")
+                    </span>
+                </div>
+                <div class="d-flex">
+                    <!-- Nút Update -->
+                        <button  class="btn btn-primary btn-sm me-2" onclick="updateItem(@item.Id)">Update</button>
+                    <!-- Nút Delete -->
+                    <button  class="btn btn-danger btn-sm" onclick="deleteItem(@item.Id)">Delete</button>
+                </div>
+            </li>
+        }
+    </ul>
+
+    <!-- Form Create Item -->
+    <div class="mt-4">
+        <div class="input-group">
+            <a type="submit" class="btn btn-success" href="/Home/Create">Create</a>
+        </div>
+    </div>
 </div>
+<script>
+    function deleteItem(id) {
+        if (confirm("Bạn có chắc chắn muốn xóa?")) {
+            fetch(`/Home/DeleteItem/${id}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Reload lại trang hoặc cập nhật giao diện
+                        location.reload();
+                    } else {
+                        alert("Xóa thất bại!");
+                    }
+                });
+        }
+    }
+    function updateItem(id) {
+        fetch(`/Home/UpdateStatus/${id}`, {
+            method: 'PUT'
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Reload lại trang hoặc cập nhật giao diện
+                    location.reload();
+                } else {
+                    alert("Cập nhật thất bại!");
+                }
+            });
+    }
+</script>
+

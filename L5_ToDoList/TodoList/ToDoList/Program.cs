@@ -8,7 +8,8 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-
+        builder.Services.AddSingleton<IToDoItemRepository,InMemoryToDoItemsRepositoy>();
+        builder.Services.AddTransient<ToDoListManager>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
