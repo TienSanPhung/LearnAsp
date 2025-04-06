@@ -9,8 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95a637a8-34ca-406c-b769-a53c17a68f61" name="Changes" comment="- feat: thêm, sửa, xóa todoitem&#10;- xây dựng thêm sửa xóa &#10;- chức năng thêm vẫn còn sử dụng bộ đếm id đơn giản&#10;- chưa viết repository kết nối đến Database">
+    <list default="true" id="95a637a8-34ca-406c-b769-a53c17a68f61" name="Changes" comment="- feat: thêm TestProject&#10;- viết các unnit test cho creat, set status, delete">
+      <change afterPath="$PROJECT_DIR$/Infracstructure/InDBToDoItemsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infracstructure/ToDoItemsDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ToDoList/Controllers/ToDoDBController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ToDoList/Views/ToDoDB/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ToDoList/Views/ToDoDB/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UseCases/IToDoItemFromDbRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UseCases/ToDoListManagerFromDb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infracstructure/Infracstructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infracstructure/Infracstructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/ToDoList.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/ToDoList.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +48,14 @@
     &quot;accountId&quot;: &quot;a8b68f96-49bb-4ab6-b43f-0e4ca16dd920&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d81b2d4f22bee75e5438c707251ae43cb0974c207db91ffc159118c84b4eb9/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b8c1c57742337e59591581af3eb2c647e9ed52d2951655fd74b1facf3ff520/ConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -57,7 +77,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -118,7 +138,9 @@
       <updated>1743785937242</updated>
       <workItem from="1743785941576" duration="3824000" />
       <workItem from="1743820151053" duration="5842000" />
-      <workItem from="1743834089117" duration="10619000" />
+      <workItem from="1743834089117" duration="12714000" />
+      <workItem from="1743902700525" duration="2128000" />
+      <workItem from="1743905876239" duration="12071000" />
     </task>
     <task id="LOCAL-00001" summary="- add: Entity, UseCases, Infracstructure and mainProject&#10;- viết các hành vi cập nhật trạng thái cho ToDoItem&#10;- sử dụng Repository pattern">
       <option name="closed" value="true" />
@@ -136,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743847172492</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- feat: thêm TestProject&#10;- viết các unnit test cho creat, set status, delete">
+      <option name="closed" value="true" />
+      <created>1743847689797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743847689797</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +189,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="- add: Entity, UseCases, Infracstructure and mainProject&#10;- viết các hành vi cập nhật trạng thái cho ToDoItem&#10;- sử dụng Repository pattern" />
     <MESSAGE value="- feat: thêm, sửa, xóa todoitem&#10;- xây dựng thêm sửa xóa &#10;- chức năng thêm vẫn còn sử dụng bộ đếm id đơn giản&#10;- chưa viết repository kết nối đến Database" />
-    <option name="LAST_COMMIT_MESSAGE" value="- feat: thêm, sửa, xóa todoitem&#10;- xây dựng thêm sửa xóa &#10;- chức năng thêm vẫn còn sử dụng bộ đếm id đơn giản&#10;- chưa viết repository kết nối đến Database" />
+    <MESSAGE value="- feat: thêm TestProject&#10;- viết các unnit test cho creat, set status, delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="- feat: thêm TestProject&#10;- viết các unnit test cho creat, set status, delete" />
   </component>
 </project>

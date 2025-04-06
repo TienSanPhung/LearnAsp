@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace ToDoList;
 
 public class Program
@@ -5,11 +7,17 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+        builder.Services.AddDbContext<ToDoItemsDbContext>(options =>
+        {
+            var connectionString = builder.Configuration.GetConnectionString("TodoDbConnection");
+            options.UseSqlServer(connectionString);
+        });
         // Add services to the container.
         builder.Services.AddControllersWithViews();
         builder.Services.AddSingleton<IToDoItemRepository,InMemoryToDoItemsRepositoy>();
+        builder.Services.AddScoped<IToDoItemFromDbRepository,InDbToDoItemsRepository>();
         builder.Services.AddTransient<ToDoListManager>();
+        builder.Services.AddTransient<ToDoListManagerFromDb>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
