@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using HttpContext_HttpRequest_HttpRespone.Models;
+using HttpContext_HttpRequest_HttpRespone.Helpers;
 
 namespace HttpContext_HttpRequest_HttpRespone.Controllers;
 
@@ -15,8 +16,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        _logger.LogInformation("Id: {Id} from {rq}", HttpContext.TraceIdentifier,Request.GetDebugIf());
         return View();
     }
+
+    
 
     public IActionResult Privacy()
     {
