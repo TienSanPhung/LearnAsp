@@ -17,6 +17,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         _logger.LogInformation("Id: {Id} from {rq}", HttpContext.TraceIdentifier,Request.GetDebugIf());
+       
         return View();
     }
 
