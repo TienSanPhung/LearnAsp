@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneMySession", "CloneMySession\CloneMySession.csproj", "{75A395BE-DC35-47EF-AE7D-95F3D5BACCFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIO", "FileIO\FileIO.csproj", "{ABCF6DB9-CB0E-4E42-9C3F-F4DB100331C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{75A395BE-DC35-47EF-AE7D-95F3D5BACCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75A395BE-DC35-47EF-AE7D-95F3D5BACCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75A395BE-DC35-47EF-AE7D-95F3D5BACCFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCF6DB9-CB0E-4E42-9C3F-F4DB100331C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCF6DB9-CB0E-4E42-9C3F-F4DB100331C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCF6DB9-CB0E-4E42-9C3F-F4DB100331C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCF6DB9-CB0E-4E42-9C3F-F4DB100331C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
