@@ -2,39 +2,53 @@
 
 namespace CloneMySession.MySession;
 
-public class MySession : ISession
+public class MySession(string id, IStorageEngine engine) : ISession
 {
-    public Task LoadAsync(CancellationToken cancellationToken = new CancellationToken())
+    private readonly Dictionary<string, byte[]> _store  = new Dictionary<string, byte[]>();
+    public async Task LoadAsync(CancellationToken cancellationToken = new CancellationToken())
     {
-        throw new NotImplementedException();
+        _store.Clear();
+        var data = await engine.LoadAsync(Id,cancellationToken);
+        foreach (var item in data)
+        {
+            _store[item.Key] = item.Value;
+        }
     }
 
-    public Task CommitAsync(CancellationToken cancellationToken = new CancellationToken())
+    public async Task CommitAsync(CancellationToken cancellationToken = new CancellationToken())
     {
-        throw new NotImplementedException();
+        await engine.CommitAsync(Id,_store, cancellationToken);
     }
 
     public bool TryGetValue(string key, [NotNullWhen(true)] out byte[]? value)
     {
-        throw new NotImplementedException();
+        return _store.TryGetValue(key, out value);
     }
 
     public void Set(string key, byte[] value)
     {
-        throw new NotImplementedException();
+        _store[key]= value;
     }
 
     public void Remove(string key)
     {
-        throw new NotImplementedException();
+        _store.Remove(key);
     }
 
     public void Clear()
     {
-        throw new NotImplementedException();
+        _store.Clear();
     }
 
-    public bool IsAvailable { get; }
-    public string Id { get; }
-    public IEnumerable<string> Keys { get; }
+    public bool IsAvailable
+    {
+        get
+        {
+            LoadAsync(CancellationToken.None).Wait();
+            return true;
+        }
+    }
+
+    public string Id => id;
+    public IEnumerable<string> Keys => _store.Keys;
 }

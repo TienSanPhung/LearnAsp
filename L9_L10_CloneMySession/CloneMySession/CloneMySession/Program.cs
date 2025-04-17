@@ -8,6 +8,13 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddSingleton<IStorageEngine>(services =>
+        {
+            var path = Path.Combine(services.GetRequiredService<IHostEnvironment>().ContentRootPath, "Sessions");
+            Directory.CreateDirectory(path);
+            return new FileManagerSession(path);
+        });
+        builder.Services.AddSingleton<ISessionStorage, MyStorage>();
 
         var app = builder.Build();
 
