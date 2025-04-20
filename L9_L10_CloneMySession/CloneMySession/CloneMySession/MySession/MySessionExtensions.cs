@@ -17,14 +17,20 @@ public static class MySessionExtensions
             if (SessionIdFormatValid(SessionId))
             {
                 var session = context.RequestServices.GetRequiredService<ISessionStorage>().Get(SessionId);
-                context.Response.Cookies.Append(SessionIdCookieName, session.Id);
+                context.Response.Cookies.Append(SessionIdCookieName, session.Id, new CookieOptions()
+                {
+                    HttpOnly = true
+                });
                 sessionContainer.Session = session;
                 return session;
             }
             else
             {
                 var session = context.RequestServices.GetRequiredService<ISessionStorage>().Create();
-                context.Response.Cookies.Append(SessionIdCookieName, session.Id);
+                context.Response.Cookies.Append(SessionIdCookieName, session.Id, new CookieOptions()
+                {
+                    HttpOnly = true
+                });
                 sessionContainer.Session = session;
                 return session;
             }
