@@ -2,10 +2,11 @@
 
 namespace CloneMySession.Controllers;
 
-public class TestController : Controller
+public class UnitController : Controller
 {
+   
     // GET
-    public IActionResult TestSestionContainer()
+    public IActionResult TestContainer()
     {
         var session = HttpContext.GetSession();
         session.SetString("Name", "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ");
@@ -20,17 +21,14 @@ public class TestController : Controller
             return BadRequest("Session not found");
         }
     }
-    
     public async Task<IActionResult> SetSessionValue(string key, string value)
     {
         var session = HttpContext.GetSession();
         await session.LoadAsync();
         session.SetString(key,value);
         await session.CommitAsync();
-        
         return Ok();
     }
-    
     public async Task<IActionResult> GetSessionValue(string key)
     {
         var session = HttpContext.GetSession();
@@ -38,5 +36,4 @@ public class TestController : Controller
         var value = session.GetString(key);
         return Ok(value);
     }
-    
 }
