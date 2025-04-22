@@ -10,4 +10,8 @@
       <_ContentIncludedByDefault Remove="Views\FileIO\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Sessions\" />
+    </ItemGroup>
+
 </Project>

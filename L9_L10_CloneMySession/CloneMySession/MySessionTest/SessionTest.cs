@@ -18,4 +18,17 @@ public class SessionTest : IClassFixture<WebApplicationFactory<CloneMySession.Pr
         var response = await factory.GetAsync("/Test/TestSestionContainer");
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
+    [Fact]
+    public async Task Call_Set_And_Get_SessionValuesAsync_Return_Ok_Async()
+    {
+        string RandomValues = Guid.NewGuid().ToString();
+        await factory.GetAsync($"/Test/SetSessionValueAsync?key=TEST-KEY&value={RandomValues}");
+        
+        var response = await factory.GetAsync("/Test/GetSessionValueAsync?key=TEST-KEY");
+       
+        string responseBody = await response.Content.ReadAsStringAsync();
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal(RandomValues,responseBody );
+        
+    }
 }
