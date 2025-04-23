@@ -34,4 +34,18 @@ public class FileManagerSession : IStorageEngine
         streamWriter.Write(JsonSerializer.Serialize(store));
         return Task.CompletedTask;
     }
+
+    public Dictionary<string, byte[]> Load(string id)
+    {
+        var storePath = Path.Combine(_directoryPath, id);
+        if (!File.Exists(storePath))
+        {
+            return [];
+        }
+
+        using FileStream fileStream = new FileStream(storePath, FileMode.Open);
+        using StreamReader streamReader = new StreamReader(fileStream);
+        var  json =  streamReader.ReadToEnd();
+        return  JsonSerializer.Deserialize<Dictionary<string, byte[]>>(json)??[];
+    }
 }

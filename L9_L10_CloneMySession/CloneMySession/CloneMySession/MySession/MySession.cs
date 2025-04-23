@@ -14,6 +14,15 @@ public class MySession(string id, IStorageEngine engine) : ISession
             _store[item.Key] = item.Value;
         }
     }
+    public void  Load()
+    {
+        _store.Clear();
+        var data =  engine.Load(Id);
+        foreach (var item in data)
+        {
+            _store[item.Key] = item.Value;
+        }
+    }
 
     public async Task CommitAsync(CancellationToken cancellationToken = new CancellationToken())
     {
@@ -44,7 +53,7 @@ public class MySession(string id, IStorageEngine engine) : ISession
     {
         get
         {
-            LoadAsync(CancellationToken.None).Wait();
+            Load();
             return true;
         }
     }

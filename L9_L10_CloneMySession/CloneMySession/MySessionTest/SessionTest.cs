@@ -27,6 +27,7 @@ public class SessionTest : IClassFixture<WebApplicationFactory<CloneMySession.Pr
         var response = await factory.GetAsync("/Test/GetSessionValue?key=TEST-KEY");
        
         string responseBody = await response.Content.ReadAsStringAsync();
+        
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.Equal(RandomValues,responseBody );
         
